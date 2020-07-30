@@ -1,6 +1,6 @@
 # Version W34-HC-IMJD-2.0.0
 
-1. New air quality modules (US/Global AQI and UK/DAQI) for the top row and an updated main air quality module. These all rely on you using the new default extended datbase schema which includes records for particle concentrations. You must have an air quality particle detector which is able to populate these fields. There are Highcharts setup to plot particle data concentrations. These new modules are selectable from the settings page.
+1. New air quality modules (US/Global AQI and UK/DAQI) for the top row and an updated main air quality module. These all rely on you using the new default extended database schema which includes records for particle concentrations. You must have an air quality particle detector which is able to populate these fields. There are Highcharts setup to plot particle data concentrations. These new modules are selectable from the settings page.
 
 2. Cloud Coverage. Cloud coverage is displayed in the current conditions module expressed as % and oktas(eighths). There are Highcharts set up to plot % coverage. The cloud coverage is measured from satellite images and is adapted from a method proposed by David Marshall.
 
