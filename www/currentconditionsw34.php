@@ -42,7 +42,8 @@ else if($weather["rain_rate2"]>0){echo "<img rel='prefetch' src='css/icons/rain.
 //fog-weather34
 else if($weather["temp"] -$weather["dewpoint"] <0.8  && $now >$suns2 && $weather["temp"]>5){echo "<img rel='prefetch' src='css/icons/nt_fog.svg' width='70px' height='60px' alt='weather34 fog icon'>";}
 else if($weather["temp"] -$weather["dewpoint"] <0.8  && $now <$sunr2 && $weather["temp"]>5){echo "<img rel='prefetch' src='css/icons/nt_fog.svg' width='70px' height='60px' alt='weather34 fog icon'>";}
-else if($weather["temp"] -$weather["dewpoint"] <0.8  && $weather["temp"]>5){echo "<img rel='prefetch' src='css/icons/fog.svg' width='70px' height='60px' alt='weather34 fog'>";}
+else if($weather["temp"] -$weather["dewpoint"] <0.8  && $weather["temp"]>5){echo "<img rel='prefetch'echo "</oorange><br><oblue>Rainfall</oblue> for the last 3 hours <oblue> " .$weather["rain_last3hours"]."</oblue><valuetext> " .$rainunit;
+?></valuetext></div></div></div> src='css/icons/fog.svg' width='70px' height='60px' alt='weather34 fog'>";}
 //windy moderate-weather34
 else if($weather["wind_speed_avg"]>=15 && $now >$suns2 && $weather["cloud_cover"]<20){echo "<img rel='prefetch' src='css/icons/nt_windyclear.svg' width='70px' height='60px' alt='weather34 windy icon'>";}
 else if($weather["wind_speed_avg"]>=15 && $now <$sunr2 && $weather["cloud_cover"]<20){echo "<img rel='prefetch' src='css/icons/nt_windyclear.svg' width='70px' height='60px' alt='weather34 windy icon'>";}
@@ -153,5 +154,6 @@ echo "</valuetext>";
 if($weather["wind_direction_avg"]>0){echo "<br>Average Direction <oorange>"; if($weather["wind_direction_avg"]<=11.25){echo "North";}else if($weather["wind_direction_avg"]<=33.75){echo "NNE";}else if($weather["wind_direction_avg"]<=56.25){echo "NE";}else if($weather["wind_direction_avg"]<=78.75){echo "ENE";}else if($weather["wind_direction_avg"]<=101.25){echo "East";}else if($weather["wind_direction_avg"]<=123.75){echo "ESE";}else if($weather["wind_direction_avg"]<=146.25){echo "SE";}
 else if($weather["wind_direction_avg"]<=168.75){echo "SSE";}else if($weather["wind_direction_avg"]<=191.25){echo "South";}else if($weather["wind_direction_avg"]<=213.75){echo "SSW";}else if($weather["wind_direction_avg"]<=236.25){echo "SW";}else if($weather["wind_direction_avg"]<=258.75){echo "WSW";}else if($weather["wind_direction_avg"]<=281.25){echo "West";}else if($weather["wind_direction_avg"]<=303.75){echo "WNW";}else if($weather["wind_direction_avg"]<=326.25){echo "NW";}else if($weather["wind_direction_avg"]<=348.75){echo "NNW";}else{echo "North";}
 echo " </oorange><oblue> ".$weather["wind_direction_avg"]."</oblue>°";}
-echo "</oorange><br><oblue>Rainfall</oblue> for the last 3 hours <oblue> " .$weather["rain_last3hours"]."</oblue><valuetext> " .$rainunit;
+if ($weather["rain_units"] =='in') echo "</oorange><br><oblue>Rainfall</oblue> for the last 3 hours <oblue> ".number_format($weather["rain_last3hours"]*0.0393701,2)."</oblue><valuetext> " .$rainunit;
+else if ($weather["rain_units"] =='mm') echo "</oorange><br><oblue>Rainfall</oblue> for the last 3 hours <oblue> ".number_format($weather["rain_last3hours"],1)."</oblue><valuetext> " .$rainunit;
 ?></valuetext></div></div></div>
