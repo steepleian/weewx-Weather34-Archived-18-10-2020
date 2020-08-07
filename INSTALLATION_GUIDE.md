@@ -2,7 +2,7 @@
 
 Before you start it is a wise precaution to backup your databases, settings1.php and any customised files you wish to keep.
 
-This installation guide assumes that you are already reasonably familiar with WeeWX and that it is already installed on your computer along with a webserver, php and curl. For a light-touch webserver.
+This installation guide assumes that you are already reasonably familiar with WeeWX and that it is already installed on your computer along with a webserver, php and curl.
 
 If you have not already done so, you must update your WeeWX installation to version 4.1.1 or later. This is required to facillitate nested copying during the skin install process. Follow the various installation type links on this page http://www.weewx.com/docs/ for instructions on updating. This version of Weather34 is compatible with WeeWX 4.1.1/Python2.7 or Python3.x (Intructions for WeeWX 4 can be found at https://claydonsweather.org.uk/weewx/docs2). 
 
