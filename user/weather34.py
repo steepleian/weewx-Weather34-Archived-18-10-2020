@@ -1,6 +1,5 @@
-# $Id: weather34.py mofied for Weather34 by Ian Millard based on crt.py by mwall $
-# Weather34 WebServices added by Jerry Dietrich
-# Copyright 2013-2016 Matthew Wall
+# $Id: weather34.py for weewx-Weather34 adapted by Ian Millard$
+# Significant enhancements and improvements by Jerry Dietrich
 
 """Emit loop data to file in Weather34 realtime format.
 
@@ -613,7 +612,7 @@ class Webserver():
                 else:
                     conn.close();
             except Exception as e:
-                if not "timed out" in e:
+                if not "time" in str(e):
                     logdbg(e)
     
     def execute_report(self, args, conn, address):
