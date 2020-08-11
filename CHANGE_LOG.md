@@ -90,3 +90,4 @@
 86. Current conditions module Icons and descriptions now match
 87. Addition of oktas to cloud coverage in current conditions module
 88. Readme and installation instructions updated
+89. Updated weather34.py, change for time out in P3
