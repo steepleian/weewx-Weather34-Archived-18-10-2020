@@ -91,3 +91,4 @@
 87. Addition of oktas to cloud coverage in current conditions module
 88. Readme and installation instructions updated
 89. Updated weather34.py, change for time out in P3
+90. Added w34_reports to w34Highcharts folder and updated plot_config.js accordingly
