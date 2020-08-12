@@ -1,6 +1,6 @@
 var pathjsonfiles =  "json/";            //Location weewx report output json files from home location of weewx. DO NOT CHANGE UNLESS YOU CHANGE SKIN DIRECTORY.
 var pathjsondayfiles = "json_day/";      //Location day report output json files from home location of where wee_report_34 run. DO NOT CHANGE UNLESS YOU CHANGE SKIN DIRECTORY.
-var weereportcmd = "./wee_reports_w34";  //Command to run wee_report_34. DO NOT CHANGE.
+var weereportcmd = "./w34_reports";  //Command to run w34_reports. DO NOT CHANGE.
 var realtimefilename = "w34realtime.txt"; //File name must match what is in the weewx config for realtime
 
 var autoupdateinterval = 60; //This is seconds
