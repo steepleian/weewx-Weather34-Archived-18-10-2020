@@ -63,7 +63,23 @@ Ensure that these paths are correct for your installation.
 
             href="<?php echo $chartsource;?>/highcharts.html?chart='[chart_ID]'&span='[time_frame]'&temp='<?php echo $weather['temp_units'];?>'&pressure='<?php echo $weather['barometer_units'];?>'&wind='<?php echo $weather['wind_units'];?>'&rain='<?php echo $weather['rain_units']?>" data-lity >
             
-            
-            
+# Further Details for Weather34 Highcharts Option
+
+On a normal setup (WeeWX and webserver on the same machine) the getDayChart.php code uses the info found in weewxserverinfo.txt (located in the weewx directory) to establish a socket connection to weather34.py to send the modified WeeWX config file along with a timestamp so that the WeeWX report engine can generate the report and write it to the json_day folder.
+
+If the socket connection fails the the getDayChart.php code uses the location of the weewx system found in weewxserverinfo.txt to set the pythonpath and then run w34_reports. In this case weather34.py is not used, but the output follows the same path as before.
+
+If weewxserverinfo.txt is not there then the php falls back to hardcoded WeeWX paths in the getDayChart.php to execute w34_reports.  If WeeWX is still not found the errors are logged in the webserver log file.
+
+As a side note the w34_reports command is always logged into the webserver error log for reference. This is why next to the syslog log this is the most important log followed by the browser console log.
+
+If using a remote webserver then the setup is different and now rsync needs to be used since the python path will not work and the file w34_reports is a noop now and weather34.py is the only path.
+
+The user must setup keys and the transfer in the WeeWX config to to rsync for any transfers to work from a WeeWX server to a remote webserver.
+
+Note in the plots_config.js you can turn off all day plots using the info  var disable_day_plots = false; //Disable day plots by changing this setting to true. This is useful to suppress pop-up error messages when the configuration is unable to use day plots. 
+
+To summarise there are multiple ways for day plots to work with local setups, with each level down getting a little more brittle. With remote machines there is only one way and everything must be setup correctly.
+           
             
 Any problems, please raise an Issue in this repository attaching a debug report (see here for details http://www.weewx.com/docs/utilities.htm#wee_debug_utility), your skin.conf files and a syslog tail report covering at least two archive cycles from startup.
