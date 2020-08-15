@@ -132,7 +132,7 @@ $aq_interval = "3600";
 $aq_filename = "$jsondatapath/aqi.txt";
 $pu_url = "https://www.purpleair.com/json?show=$purpleairID";
 $pu_interval = "300";
-$pu_filename = "purpleair.txt";
+$pu_filename = "$jsondatapath/purpleair.txt";
 $services = "ds.me.eq.ki.wu.aq.al";
 $continent = "eu";
 $cc_interval = "300";
