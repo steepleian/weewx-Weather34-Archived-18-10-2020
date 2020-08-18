@@ -613,7 +613,7 @@ class Webserver():
                 else:
                     conn.close();
             except Exception as e:
-                if not "timed out" in e:
+                if not "time" in str(e):
                     logdbg(e)
     
     def execute_report(self, args, conn, address):
@@ -744,7 +744,7 @@ class Weather34RealTime(StdService):
         except:
             self.cache_debug = False
 
-        with open(d.get('weewxserverinfofilename', '/var/www/html/weewx/weewxserverinfo.txt'), 'w') as f:
+        with open(d.get('weewxserverinfofilename', config_dict['StdReport'].get('HTML_ROOT', '/var/www/html/weewx') + '/weewxserverinfo.txt'), 'w') as f:
             f.write(str(weewxserver_ip) + ":" + config_dict['Weather34RealTime'].get('weewx_port', '25252') + ":" + weewx_file_transfer + ":" + bin_path)
 
         loginf("Check lightning Strike Count: " + str(self.chk_lightning_cnt))
