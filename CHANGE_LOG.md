@@ -93,3 +93,4 @@
 89. Updated weather34.py, change for time out in P3
 90. Added w34_reports to w34Highcharts folder and updated plot_config.js accordingly
 91. Rolled back 89. to previous state as it caused chart click-through to hang on final click
+92. weather34.py corrected hard coded path
