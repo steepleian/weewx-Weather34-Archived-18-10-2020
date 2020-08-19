@@ -11,7 +11,12 @@
  include('settings.php');include('shared.php');error_reporting(0); 
 //weewx - api December 2019 
 
-    include('archivedata.php');
+    try {
+    	include('archivedata.php');
+    } catch (Exception $e) {
+      error_log($e);
+      error_log("ERROR IN ARCHIVEDATA.PHP SUSPECT ISSUE WITH ARCHIVEDATA.PHP.TMPL");
+    }
     $weewxrt = array_map(function($v) { if($v == 'NULL') { return null; } return $v; }, explode(" ", file_get_contents($livedata)));
     if (isset($weewxapi)){
         $weather["rain_alltime"] = $weewxapi[151];
@@ -90,10 +95,10 @@
 	$weather["mbplatform"]	       = $weewxapi[41];
 	$weather["uptime"]	       = $weewxapi[81];//uptime in seconds
 	$weather["vpforecasttext"]     = $weewxapi1[1];//davis console forecast text
-	$weather["temp_avgtoday"]      =$weewxapi[152];
-	$weather['wind_speed_avg30']   =$weewxapi[158];
-	$weather['wind_speed_avgday']  =$weewxapi[158];
-	$weather["cloud_cover"] = $weewxapi[204];    
+	$weather["temp_avgtoday"]      = $weewxapi[152];
+	$weather['wind_speed_avg30']   = $weewxapi[158];
+	$weather['wind_speed_avgday']  = $weewxapi[158];
+        $weather["cloud_cover"]        = $weewxapi[204]; 
 	//weather34 windrun
 	$windrunhr=date('G');$windrunmin=(($windrunmin=date('i')/60));
 	$windrunformula=$windrunhr=date('G')+$windrunmin;
@@ -125,6 +130,7 @@ if ($weather["moonphase"]==0) {$weather["moonphase"]='New Moon';}else if ($weath
 	    $weather["lightningtimeago"] = 0;
         else
 	    $weather["lightningtimeago"] = time()-strtotime($weewxapi[77]);
+
 	$weather["lightningday"]       = $weewxapi[76];
 	$weather["lightningmonth"]     = $weewxapi[74];
 	$weather["lightningyear"]      = $weewxapi[75];
