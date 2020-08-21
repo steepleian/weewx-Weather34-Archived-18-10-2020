@@ -5,50 +5,15 @@
  *
  * License: www.highcharts.com/license
  */
-'use strict';
-(function (factory) {
-    if (typeof module === 'object' && module.exports) {
-        factory['default'] = factory;
-        module.exports = factory;
-    } else if (typeof define === 'function' && define.amd) {
-        define('highcharts/themes/dark-unica', ['highcharts'], function (Highcharts) {
-            factory(Highcharts);
-            factory.Highcharts = Highcharts;
-            return factory;
-        });
-    } else {
-        factory(typeof Highcharts !== 'undefined' ? Highcharts : undefined);
-    }
-}(function (Highcharts) {
-    var _modules = Highcharts ? Highcharts._modules : {};
-    function _registerModule(obj, path, args, fn) {
-        if (!obj.hasOwnProperty(path)) {
-            obj[path] = fn.apply(null, args);
-        }
-    }
-    _registerModule(_modules, 'themes/dark-unica.js', [_modules['parts/Globals.js']], function (Highcharts) {
-        /* *
-         *
-         *  (c) 2010-2019 Torstein Honsi
-         *
-         *  License: www.highcharts.com/license
-         *
-         *  Dark theme for Highcharts JS
-         *
-         * */
-
-
-        /* global document */
-
         // Load the fonts
 
-        Highcharts.createElement('link', {
+Highcharts.createElement('link', {
             href: 'https://fonts.googleapis.com/css?family=Unica+One',
             rel: 'stylesheet',
             type: 'text/css'
         }, null, document.getElementsByTagName('head')[0]);
 
-        Highcharts.theme = {
+Highcharts.theme = {
             colors: ['rgba(255, 124, 57, 0.8)', '#1ABECE', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
                 '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
             chart: {
@@ -357,11 +322,4 @@
         };
 
         // Apply the theme
-        Highcharts.setOptions(Highcharts.theme);
-
-    });
-    _registerModule(_modules, 'masters/themes/dark-unica.src.js', [], function () {
-
-
-    });
-}));
+Highcharts.setOptions(Highcharts.theme);
