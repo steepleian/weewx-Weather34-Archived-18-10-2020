@@ -9,9 +9,9 @@ import grp
 import pwd
 import os
 
-def change_permissions_recursive(path_list):
-    uid = pwd.getpwnam("www-data").pw_uid
-    gid = grp.getgrnam("www-data").gr_gid
+def change_permissions_recursive(path_list, uid_str, gid_str):
+    uid = pwd.getpwnam(uid_str).pw_uid
+    gid = grp.getgrnam(gid_str).gr_gid
     for p in path_list:
         os.chmod(p, 0o755)
         os.chown(p, uid, gid)
@@ -22,7 +22,7 @@ def change_permissions_recursive(path_list):
                 if "json_day" in directory:
                     os.chmod(directory, 0o777)
             for filename in [os.path.join(root, f) for f in files]:
-                os.chmod(filename, (0o777 if "wee_reports_w34" in filename else 0o755))
+                os.chmod(filename, (0o777 if "w34_reports" in filename else 0o755))
                 os.chown(filename, uid, gid)
 
 def find_replace(d, k, v, do_overwrite, append = False, delete = False):
@@ -97,7 +97,8 @@ try:
             for i in range(0, len(copy_list), 2):
                 distutils.dir_util.copy_tree(os.path.join(extract_path, copy_list[i+1].strip()), copy_list[i].strip(), update = do_overwrite)
         locations = {copy_list[i+1]:copy_list[i] for i in range(0, len(copy_list), 2)}
-        change_permissions_recursive([locations["www"]])
+        parts = d["uid_gid"].split(",")
+        change_permissions_recursive([locations["www"]], parts[0], parts[1])
         if d["delete_extracted_files"] == "True":
             if extract_path != os.getcwd():
                 distutils.dir_util.remove_tree(extract_path)
