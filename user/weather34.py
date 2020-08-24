@@ -675,9 +675,18 @@ class Weather34RealTime(StdService):
         weewx_file_transfer = d.get('weewx_file_transfer', '')
 
         weewxserver_ip = socket.gethostbyname(socket.gethostname())
-        if weewxserver_ip.startswith('127.'):
-            weewxserver_ip = subprocess.check_output(['hostname', '-s', '-I']).split(b" ")[0].decode()
-
+        try:
+       	    if weewxserver_ip.startswith('127.'):
+                weewxserver_ip = subprocess.check_output(['hostname', '-s', '-I']).split(b" ")[0].decode()
+        except:
+           s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+           try:
+               s.connect(('10.255.255.255', 1))
+               weewxserver_ip = s.getsockname()[0]
+           except:
+               loginf("Cannot get local IP of weewx machine. Must use config entry weewxserver_address in [Weather34RealTime] in weewx.conf")
+           finally:
+              s.close() 
         bin_path = os.path.dirname(os.path.realpath(__file__)).split("/user")[0]
         # source unit system is the database unit system
         self.db_us = None
