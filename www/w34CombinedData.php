@@ -126,10 +126,13 @@ if ($weather["moonphase"]==0) {$weather["moonphase"]='New Moon';}else if ($weath
 	$weather["lightning_disturber_count"] = $weewxrt[62];
 	
         // weatherflow lightning
-        if (trim($weewxapi[77]) == 'N/A')
+        if (trim($weewxapi[77]) == 'N/A' || $weewxapi[77] == '0')
 	    $weather["lightningtimeago"] = 0;
-        else
-	    $weather["lightningtimeago"] = time()-strtotime($weewxapi[77]);
+        else{
+            $parts  = explode(" ", $weewxapi[77]); 
+            $parts1 = explode("/", $parts[0]); 
+	    $weather["lightningtimeago"] = time()-strtotime("20".$parts1[2].$parts1[1].$parts1[0]." ".$parts[1]);
+        }
 
 	$weather["lightningday"]       = $weewxapi[76];
 	$weather["lightningmonth"]     = $weewxapi[74];
