@@ -96,3 +96,4 @@
 92. weather34.py corrected hard coded path
 93. w34CombinedData.php try catch around loading archivedata.php 
 94. Fix for Highcharts update.
+95. Corrected font weight WU large forecast in light theme
