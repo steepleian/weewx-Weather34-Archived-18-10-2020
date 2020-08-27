@@ -1584,44 +1584,44 @@ function plot_js(units, ptype, span, plt_div, dplots = false, cdates = false, re
 	    options.yAxis[0].minorTickInterval = 25;
 	    options.yAxis[0].title.text = "(%)";
             options.yAxis[0].plotBands = [{
-                             color: theme=='white'?theme:'transparent',
+                             color: Highcharts.theme=='white'?Highcharts.theme:'transparent',
                              from: 0,
                              to: 20,
                              label: {
                                  text: 'Clear',
-                                 style: {color: theme=='white'?'black':'white'}
+                                 style: {color: Highcharts.theme=='white'?'black':'white'}
                                  }
                              },{
-                             color: theme=='white'?theme:'transparent',
+                             color: Highcharts.theme=='white'?Highcharts.theme:'transparent',
                              from: 20,
                              to: 40,
                              label: {
                                  text: 'Scattered Clouds',
-                                 style: {color: theme=='white'?'black':'white'}
+                                 style: {color: Highcharts.theme=='white'?'black':'white'}
                                  }
                              },{
-                             color: theme=='white'?theme:'transparent',
+                             color: Highcharts.theme=='white'?Highcharts.theme:'transparent',
                              from: 40,
                              to: 60,
                              label: {
                                  text: 'Partly Cloudy',
-                                 style: {color: theme=='white'?'black':'white'}
+                                 style: {color: Highcharts.theme=='white'?'black':'white'}
                                  }
                              },{
-                             color: theme=='white'?theme:'transparent',
+                             color: Highcharts.theme=='white'?Highcharts.theme:'transparent',
                              from: 60,
                              to: 80,
                              label: {
                                  text: 'Mostly Cloudy',
-                                 style: {color: theme=='white'?'black':'white'}
+                                 style: {color: Highcharts.theme=='white'?'black':'white'}
                                  }
                              },{
-                             color: theme=='white'?theme:'transparent',
+                             color: Highcharts.theme=='white'?Highcharts.theme:'transparent',
                              from: 80,
                              to: 100,
                              label: {
                                  text: 'Overcast',
-                                 style: {color: theme=='white'?'black':'white'}
+                                 style: {color: Highcharts.theme=='white'?'black':'white'}
                                  }
                              }];
             options.plotOptions = {
