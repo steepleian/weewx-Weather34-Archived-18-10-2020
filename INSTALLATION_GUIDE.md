@@ -10,10 +10,11 @@ If you are carrying out a fresh install of WeeWX, my own personal preference is 
 
 * Please familiarise yourself with the location of your WeeWX system files including your bin/user folder, skins folder and weewx.conf file. If you are unsure where to find these, please refer to the installation processes here: - https://claydonsweather.org.uk/weewx/docs/ which shows various WeeWX installation scenarios.
 
-IMPORTANT. After installing PHP please make sure you install all the PHP modules appropriate for your version of PHP. Failure to due so may mean that forecasts and current conditions fail to update. This is an example for PHP7.3 modules on a Debian based distribution: -
+IMPORTANT. Installing PHP; please make sure you install all the PHP modules appropriate for your version of PHP. Failure to due so may mean that forecasts and current conditions fail to update. This is an example for PHP7.3 modules on a Debian based distribution: -
 
-	sudo apt-get install php-cli php-fpm php-json php-sqlite3 php-zip php-gd  php-mbstring php-curl php-xml php-pear php-bcmath
-	sudo apt-get install libapache2-mod-php
+	sudo apt install php
+	sudo apt install php-cli php-fpm php-json php-sqlite3 php-zip php-gd  php-mbstring php-curl php-xml php-pear php-bcmath
+	sudo apt install libapache2-mod-php
 	sudo a2enmod php7.3
 	sudo systemctl restart apache2
 
@@ -34,7 +35,7 @@ Once completed, make sure you save weewx.conf
 
 		sudo git clone https://github.com/steepleian/weewx-Weather34.git
 		cd weewx-Weather34
-		sudo python w34_installer.py
+		sudo python w34_installer.py or sudo python3 w34_installer.py (if you are running Python3)
 		
 		    You will be prompted for the config file for your WeeWX install type.
 		    Select packaged if your WeeWX was installed by Debian, RedHat or Suse methods [default option]
@@ -49,7 +50,7 @@ Once completed, make sure you save weewx.conf
 		
 		unzip weewx-Weather34-master.zip
 		cd weewx-Weather34-master
-		sudo python w34_installer.py
+		sudo python w34_installer.py or sudo python3 w34_installer.py (if you are running Python3)
 		
 		    You will be prompted for the config file for your WeeWX install type.
 		    Select packaged if your WeeWX was installed by Debian, RedHat or Suse methods [default option]
@@ -62,7 +63,7 @@ Once completed, make sure you save weewx.conf
 
 		Download weewx-Weather34-master.zip from https://github.com/steepleian/weewx-Weather34/edit/master/ into the folder where w34_installer.py is already located
 	        
-		sudo python w34_installer.py
+		sudo python w34_installer.py or sudo python3 w34_installer.py (if you are running Python3)
 		
 		    You will be prompted for the config file for your WeeWX install type.
 		    Select packaged if your WeeWX was installed by Debian, RedHat or Suse methods [default option]
