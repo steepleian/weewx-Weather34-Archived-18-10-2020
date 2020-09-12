@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to weewx-Weather34 Project Pages
 
 You can use the [editor on GitHub](https://github.com/steepleian/weewx-Weather34/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
