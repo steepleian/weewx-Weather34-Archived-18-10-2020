@@ -1,5 +1,5 @@
 layout: page
-title: "Pre-configure your settings before download"
-permalink: /preconfigure.html/
+title: "SETTINGS"
+permalink: /settings/
 
 Pre-configure your settings before download
