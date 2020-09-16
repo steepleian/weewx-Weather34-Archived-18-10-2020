@@ -72,7 +72,9 @@ button {
   
 h2 {text-align: center;}  
 </style>
-  
+</head>
+<body>  
+
 <?php
 
 include('file.txt');
@@ -105,213 +107,62 @@ $aa_interval =$myaerisid = "'. $_POST["aa_interval"]. '";
 $ah_interval =$myaerisid = "'. $_POST["ah_interval"]. '";
 $ao_interval =$myaerisid = "'. $_POST["ao_interval"]. '";
 $services = "'. $_POST["services"]. '";
-';}
-?>  
-  
-</head>
-
-  
-<body>  
-
-<?php
-
-// define variables and set to empty values
-
-
-
-
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-if (empty($_POST["lat"])) {
-    $lat = "";
-  } else {
-    $lat = test_input($_POST["lat"]);
-  }  
-if (empty($_POST["lon"])) {
-    $lon = "";
-  } else {
-    $lon = test_input($_POST["lon"]);
-  }  
-if (empty($_POST["lang"])) {
-    $lang = "";
-  } else {
-    $lang = test_input($_POST["lang"]);
-  }  
-if (empty($_POST["continent"])) {
-    $continent = "";
-  } else {
-    $continent = test_input($_POST["continent"]);
-  }
-if (empty($_POST["aq_apikey"])) {
-    $aq_apikey = "";
-  } else {
-    $aq_apikey = test_input($_POST["aq_apikey"]);
-  }
-if (empty($_POST["aq_interval"])) {
-    $aq_interval = "";
-  } else {
-    $aq_interval = test_input($_POST["aq_interval"]);
-  }   
-if (empty($_POST["ds_apikey"])) {
-    $ds_apikey = "";
-  } else {
-    $ds_apikey = test_input($_POST["ds_apikey"]);
-  }
-if (empty($_POST["ds_interval"])) {
-    $ds_interval = "";
-  } else {
-    $ds_interval = test_input($_POST["ds_interval"]);
-  }   
-if (empty($_POST["wu_apikey"])) {
-    $wu_apikey = "";
-  } else {
-    $wu_apikey = test_input($_POST["wu_apikey"]);
-  }
-  if (empty($_POST["wu_interval"])) {
-    $wu_interval = "";
-  } else {
-    $wu_interval = test_input($_POST["wu_interval"]);
-  } 
-  if (empty($_POST["me_apikey"])) {
-    $me_apikey = "";
-  } else {
-    $me_apikey = test_input($_POST["me_apikey"]);
-  }  
-if (empty($_POST["me_code"])) {
-    $me_code = "";
-  } else {
-    $me_code = test_input($_POST["me_code"]);
-  }
-if (empty($_POST["me_interval"])) {
-    $me_interval = "";
-  } else {
-    $me_interval = test_input($_POST["me_interval"]);
-  }   
-if (empty($_POST["pu_id"])) {
-    $pu_id = "";
-  } else {
-    $pu_id = test_input($_POST["pu_id"]);
-  }
-if (empty($_POST["pu_interval"])) {
-    $me_interval = "";
-  } else {
-    $pu_interval = test_input($_POST["pu_interval"]);
-  }   
-if (empty($_POST["al_ip"])) {
-    $al_ip = "";
-  } else {
-    $al_ip = test_input($_POST["al_ip"]);
-  }
-if (empty($_POST["al_country"])) {
-    $al_country = "";
-  } else {
-    $al_country = test_input($_POST["al_country"]);
-  } 
-if (empty($_POST["al_region"])) {
-    $al_region = "";
-  } else {
-    $al_region = test_input($_POST["al_region"]);
-  }
-if (empty($_POST["al_interval"])) {
-    $al_interval = "";
-  } else {
-    $al_interval = test_input($_POST["al_interval"]);
-  }   
-if (empty($_POST["myaerisid"])) {
-    $myaerisid = "";
-  } else {
-    $myaerisid = test_input($_POST["myaerisid"]);
-  }
-if (empty($_POST["myaerissecret"])) {
-    $myaerissecret = "";
-  } else {
-    $myaerissecret = test_input($_POST["myaerissecret"]);
-  }
-if (empty($_POST["aa_interval"])) {
-    $aa_interval = "";
-  } else {
-    $aa_interval = test_input($_POST["aa_interval"]);
-  }
-if (empty($_POST["ah_interval"])) {
-    $ah_interval = "";
-  } else {
-    $ah_interval = test_input($_POST["ah_interval"]);
-  }
-if (empty($_POST["ao_interval"])) {
-    $ao_interval = "";
-  } else {
-    $ao_interval = test_input($_POST["ao_interval"]);
-  }
-if (empty($_POST["services"])) {
-    $services = "";
-  } else {
-    $services = test_input($_POST["services"]);
-  }   
-}
-
-function test_input($data) {
-  $data = trim($data);
-  
-  $data = htmlspecialchars($data);
-  return $data;
-}  
-
+';
 ?>
 
 
 <!--<p><span class="error">* required field</span></p>-->
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">  
   <h2>Weather34 Web Services and Cloud Cover Settings</h2>
-   Latitude: <input type="text" name="lat" value="<?php echo $lat;?>">
+   Latitude: <input type="text" name="lat" value="'. $_POST["lat"]. '">
   <br><br>
-  Longitude: <input type="text" name="lon" value="<?php echo $lon;?>">
+  Longitude: <input type="text" name="lon" value="'. $_POST["lon"]. '">
   <br><br>
-   Language: <input type="text" name="lang" value="<?php echo $lang;?>">
+   Language: <input type="text" name="lang" value="'. $_POST["lang"]. '">
   <br><br>
-  Continent: <input type="text" name="continent" value="<?php echo $continent;?>">
+  Continent: <input type="text" name="continent" value="'. $_POST["continent"]. '">
   <br><br>
-  Air Quality API Key: <input type="text" name="aq_apikey" value="<?php echo $aq_apikey;?>">
+  Air Quality API Key: <input type="text" name="aq_apikey" value="'. $_POST["aq_apikey"]. '">
   <br><br>
-  Air Quality Update Interval: <input type="text" name="aq_interval" value="<?php echo $aq_interval;?>">
+  Air Quality Update Interval: <input type="text" name="aq_interval" value="'. $_POST["aq_interval"]. '">
   <br><br>
-  DarkSky API Key: <input type="text" name="ds_apikey" value="<?php echo $ds_apikey;?>">
+  DarkSky API Key: <input type="text" name="ds_apikey" value="'. $_POST["ds_apikey"]. '">
   <br><br>
-  DarkSky Update Interval: <input type="text" name="ds_interval" value="<?php echo $ds_interval;?>">
+  DarkSky Update Interval: <input type="text" name="ds_interval" value="'. $_POST["ds_interval"]. '">
   <br><br>
-  Weather Underground API Key: <input type="text" name="wu_apikey" value="<?php echo $wu_apikey;?>">
+  Weather Underground API Key: <input type="text" name="wu_apikey" value="'. $_POST["wu_apikey"]. '">
   <br><br>
-  Weather Underground Update Interval: <input type="text" name="wu_interval" value="<?php echo $wu_interval;?>">
+  Weather Underground Update Interval: <input type="text" name="wu_interval" value="'. $_POST["wu_interval"]. '">
   <br><br>
-  Metar API Key: <input type="text" name="me_apikey" value="<?php echo $me_apikey;?>">
+  Metar API Key: <input type="text" name="me_apikey" value="'. $_POST["me_apikey"]. '">
   <br><br>
-  Metar Code: <input type="text" name="me_code" value="<?php echo $me_code;?>">
+  Metar Code: <input type="text" name="me_code" value="'. $_POST["me_code"]. '">
   <br><br>
-  Metar Update Interval: <input type="text" name="me_interval" value="<?php echo $me_interval;?>">
+  Metar Update Interval: <input type="text" name="me_interval" value="'. $_POST["me_interval"]. '">
   <br><br>
-  Purpleair ID: <input type="text" name="pu_id" value="<?php echo $pu_id;?>">
+  Purpleair ID: <input type="text" name="pu_id" value="'. $_POST["pu_id"]. '">
   <br><br>
-  Purpleair Update Interval: <input type="text" name="pu_interval" value="<?php echo $pu_interval;?>">
+  Purpleair Update Interval: <input type="text" name="pu_interval" value="'. $_POST["pu_interval"]. '">
   <br><br>
-  Local IP Address: <input type="text" name="al_ip" value="<?php echo $al_ip;?>">
+  Local IP Address: <input type="text" name="al_ip" value="'. $_POST["al_ip"]. '">
   <br><br>
-  Meteoalarm Country: <input type="text" name="al_country" value="<?php echo $al_country;?>">
+  Meteoalarm Country: <input type="text" name="al_country" value="'. $_POST["al_country"]. '">
   <br><br>
-  Meteoalarm Region: <input type="text" name="al_region" value="<?php echo $al_region;?>">
+  Meteoalarm Region: <input type="text" name="al_region" value="'. $_POST["al_region"]. '">
   <br><br>
-  Meteoalarm Update Interval: <input type="text" name="al_interval" value="<?php echo $al_interval;?>">
+  Meteoalarm Update Interval: <input type="text" name="al_interval" value="'. $_POST["al_interval"]. '">
   <br><br>
-  Aeris Weather ID: <input type="text" name="myaerisid" value="<?php echo $myaerisid;?>">
+  Aeris Weather ID: <input type="text" name="myaerisid" value="'. $_POST["myaerisid"]. '">
   <br><br>
-  Aeris Weather Secret: <input type="text" name="myaerissecret" value="<?php echo $myaerissecret;?>">
+  Aeris Weather Secret: <input type="text" name="myaerissecret" value="'. $_POST["myaerissecret"]. '">
   <br><br>
-  Aeris Alerts Update Interval: <input type="text" name="aa_interval" value="<?php echo $aa_interval;?>">
+  Aeris Alerts Update Interval: <input type="text" name="aa_interval" value="'. $_POST["aa_interval"]. '">
   <br><br>
-  Aeris Hourly Forecast Update Interval: <input type="text" name="ah_interval" value="<?php echo $ah_interval;?>">
+  Aeris Hourly Forecast Update Interval: <input type="text" name="ah_interval" value="'. $_POST["ah_interval"]. '">
   <br><br>
-  Aeris Outlook Interval: <input type="text" name="ao_interval" value="<?php echo $ao_interval;?>">
+  Aeris Outlook Interval: <input type="text" name="ao_interval" value="'. $_POST["ao_interval"]. '">
   <br><br>
-  Web Services Code String: <input type="text" name="services" value="<?php echo $services;?>">
+  Web Services Code String: <input type="text" name="services" value="'. $_POST["services"]. '">
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
