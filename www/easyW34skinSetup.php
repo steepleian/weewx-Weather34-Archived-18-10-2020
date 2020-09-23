@@ -2332,8 +2332,9 @@ double check again
   <select id="services" name="services" class="choose1">
         	<option><?php echo $services ;?></option>
     		<option></option>
+	    <option>me.eq.ki.wu</option>
             <option>ds.me.eq.ki</option>
-            <option>ds.me.eq.ki.wu</option>
+            <option>me.eq.ki.wu</option>
           	<option>ds.me.eq.ki.wu.aq</option>
             <option>ds.me.eq.ki.wu.pu</option>
             <option>ds.me.eq.ki.wu.aq.pu</option>
@@ -2344,12 +2345,19 @@ double check again
           	<option>ds.me.eq.ki.wu.aq.al</option>
             <option>ds.me.eq.ki.wu.pu.al</option>
             <option>ds.me.eq.ki.wu.aq.pu.al</option>
-          	<option>ds.me.eq.ki.pu.al</option>
-            <option>ds.me.eq.ki.aq.al</option>
+	    <option>me.eq.ki.wu.aq.pu.al</option>
+	    <option>me.eq.ki.wu.aq.pu.al</option>
+	    <option>me.eq.ki.wu.aq.al</option>
+	    <option>me.eq.ki.al</option>
+	    <option>me.eq.ki.aq</option>
+	    <option>me.eq.ki.wu.aq.pu</option>
+	    <option>me.eq.ki.wu.pu</option>
+          	<option>me.eq.ki.pu.al</option>
+            <option>me.eq.ki.aq.al</option>
         </select><br/>
   </span>
            <span style="color:#777;">
-            please note <span style="color:rgba(236, 87, 27, 1.000);">ds.me.eq.ki </span>is the minimum requirement for full functionality.<br/>Select blank if using weewcron method </span><br/>
+            please note <span style="color:rgba(236, 87, 27, 1.000);">me.eq.ki.wu< </span>is the minimum requirement for full functionality.<br/>Select blank if using weewcron method </span><br/>
     
    <br/><br/>
 
