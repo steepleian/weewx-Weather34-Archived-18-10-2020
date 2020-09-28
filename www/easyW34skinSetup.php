@@ -2587,7 +2587,7 @@ double check again
   </div>        
   <input id="pu_url" type="hidden" name="pu_url" value="https://www.purpleair.com/json?show=$purpleairID"/><br/>
   </div>
-  <input id="pu_filename" type="hidden" name="pu_filename" value="purpleair.txt"/><br/>
+  <input id="pu_filename" type="hidden" name="pu_filename" value="$jsondatapath/purpleair.txt"/><br/>
   </div>
   <input id="continent" type="hidden" name="continent" value="eu"/><br/>
   </div>

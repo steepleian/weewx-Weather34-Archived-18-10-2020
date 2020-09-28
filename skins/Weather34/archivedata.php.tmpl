@@ -142,10 +142,17 @@ $weewxapi[70] = "$span(time_delta=900).inTemp.avg.format(add_label=False, $local
 $weewxapi[71] = "$span(time_delta=900).inHumidity.avg.format(add_label=False, $localize=False)";
 $weewxapi[72] = "$span($time_delta=900).windSpeed.avg.format(add_label=False, $localize=False)";
 $weewxapi[73] = "$span($time_delta=1800).windSpeed.avg.format(add_label=False, $localize=False)";
+#if $varExists('month.lightning_strike_count.sum')
 $weewxapi[74] = "$month.lightning_strike_count.sum.format(add_label=False, $localize=False)";	
 $weewxapi[75] = "$year.lightning_strike_count.sum.format(add_label=False, $localize=False)";	
 $weewxapi[76] = "$day.lightning_strike_count.sum.format(add_label=False, $localize=False)";	
 $weewxapi[77] = "$year.lightning_distance.lasttime.format(format_string="%Y-%m-%d %H:%M:%S")";
+#else
+$weewxapi[74] = "";
+$weewxapi[75] = "";
+$weewxapi[76] = "";
+$weewxapi[77] = "";
+#end if
 $weewxapi[78] = "N/A";	
 $weewxapi[79] = "N/A";
 $weewxapi[80] = "$day.radiation.max.format(add_label=False, $localize=False)";
