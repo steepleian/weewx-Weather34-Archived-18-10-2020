@@ -552,10 +552,11 @@ if ($rainunit != $weather["rain_units"]) {
 		inTomm($weather, "rain_year");
 		inTomm($weather, "rainydmax");
 		inTomm($weather, "rain_lasthour");
+                inTomm($weather, "rain_last3hours");
 		inTomm($weather, "rainymax");		
 		inTomm($weather, "rainmmax");
 		inTomm($weather, "rain_24hrs");	
-    inTomm($weather, "rain_alltime");
+                inTomm($weather, "rain_alltime");
 		$weather["rain_units"] = $rainunit;
 	}
 	else if ($rainunit == "in") {
@@ -565,10 +566,11 @@ if ($rainunit != $weather["rain_units"]) {
 		mmToin($weather, "rain_year");
 		mmToin($weather, "rainydmax");
 		mmToin($weather, "rain_lasthour");
+                mmToin($weather, "rain_last3hours");
 		mmToin($weather, "rainymax");		
 		mmToin($weather, "rainmmax");
 		mmToin($weather, "rain_24hrs");
-    mmToin($weather, "rain_alltime");
+                mmToin($weather, "rain_alltime");
 		$weather["rain_units"] = $rainunit;
 	}
 }
