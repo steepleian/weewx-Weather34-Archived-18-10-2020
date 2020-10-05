@@ -84,7 +84,11 @@ function convert_rain(source, dest, fields, fixed = 2){
 }
 
 function do_distance_conversion(source, dest, data, fixed){
-   if (source == 'in')      return parseFloat((data * 25.4).toFixed(fixed));
-   else if (source == 'mm') return parseFloat((data * 0.0393701).toFixed(fixed));
+        if (source == 'in' && dest == 'mm') return parseFloat((data * 25.4).toFixed(fixed));
+   else if (source == 'in' && dest == 'cm') return parseFloat((data * 2.54).toFixed(fixed));
+   else if (source == 'mm' && dest == 'in') return parseFloat((data * 0.0393701).toFixed(fixed));
+   else if (source == 'mm' && dest == 'cm') return parseFloat((data * 0.1).toFixed(fixed));
+   else if (source == 'cm' && dest == 'mm') return parseFloat((data * 10).toFixed(fixed));
+   else if (source == 'cm' && dest == 'in') return parseFloat((data * 0.393701).toFixed(fixed));  
    return data;
 }
