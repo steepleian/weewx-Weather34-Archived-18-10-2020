@@ -12,7 +12,7 @@
 //weewx - api December 2019 
 
     try {
-    	include('archivedata.php');
+    	include('serverdata/archivedata.php');
     } catch (Exception $e) {
       error_log($e);
       error_log("ERROR IN ARCHIVEDATA.PHP SUSPECT ISSUE WITH ARCHIVEDATA.PHP.TMPL");
@@ -648,7 +648,7 @@ else if($windunit=='km/h'&&$weather["wind_units"]=='m/s'){msTokmh($weather,"wind
 else if($windunit=='m/s'&&$weather["wind_units"]=='kts'){ktsToms($weather,"wind_speed");ktsToms($weather,"wind_speed2");ktsToms($weather,"wind_speed_trend");ktsToms($weather,"wind_gust_speed");ktsToms($weather,"wind_gust_speed2");ktsToms($weather,"wind_gust_speed_trend");ktsToms($weather,"wind_speed_max");ktsToms($weather,"wind_gust_speed_max");ktsTomph($weather,"wind_gust_speed1");ktsToms($weather,"wind_run");ktsToms($weather,"wind_speed_avg");ktsToms($weather,"wind_speed_avg15");ktsToms($weather,"wind_speed_avg30");ktsToms($weather,"wind_speed_avgday");ktsToms($weather,"winddmax");ktsToms($weather,"windamax");ktsToms($weather,"windydmax");ktsToms($weather,"windmmax");ktsToms($weather,"windymax");
 ktsToms($weather,"windrun34");ktsToms($weather,"wind_gust_60min");$weather["wind_units"]=$windunit;}
 
-else if($windunit=='m/s'&&$weather["wind_units"]=='mph'){mphToms($weather,"wind_speed");mphToms($weather,"wind_speed2");mphToms($weather,"wind_speed_trend");mphToms($weather,"wind_gust_speed");mphToms($weather,"wind_gust_speed2");mphToms($weather,"wind_gust_speed_trend");mphToms($weather,"wind_speed_max");mphToms($weather,"wind_gust_speed_max");mphToms($weather,"wind_run");mphToms($weather,"wind_speed_avg");mphTokmh($weather,"wind_speed_avg15");mphTokmh($weather,"wind_speed_avg30");mphTokmh($weather,"wind_speed_avgday");mphTokmh($weather,"winddmax");mphTokmh($weather,"windamax");mphTokmh($weather,"windydmax");mphTokmh($weather,"windmmax");mphTokmh($weather,"windymax");mphToms($weather,"windrun34");mphTomh($weather,"wind_gust_60min");$weather["wind_units"]=$windunit;}
+else if($windunit=='m/s'&&$weather["wind_units"]=='mph'){mphToms($weather,"wind_speed");mphToms($weather,"wind_speed2");mphToms($weather,"wind_speed_trend");mphToms($weather,"wind_gust_speed");mphToms($weather,"wind_gust_speed2");mphToms($weather,"wind_gust_speed_trend");mphToms($weather,"wind_speed_max");mphToms($weather,"wind_gust_speed_max");mphToms($weather,"wind_run");mphToms($weather,"wind_speed_avg");mphTokmh($weather,"wind_speed_avg15");mphTokmh($weather,"wind_speed_avg30");mphTokmh($weather,"wind_speed_avgday");mphTokmh($weather,"winddmax");mphTokmh($weather,"windamax");mphTokmh($weather,"windydmax");mphTokmh($weather,"windmmax");mphTokmh($weather,"windymax");mphToms($weather,"windrun34");mphTokmh($weather,"wind_gust_60min");$weather["wind_units"]=$windunit;}
 
 else if($windunit=='m/s'&&$weather["wind_units"]=='km/h'){kmhToms($weather,"wind_speed");kmhToms($weather,"wind_speed2");kmhToms($weather,"wind_speed_trend");kmhToms($weather,"wind_gust_speed");kmhToms($weather,"wind_gust_speed2");kmhToms($weather,"wind_gust_speed_trend");kmhToms($weather,"wind_speed_max");kmhToms($weather,"wind_gust_speed_max");kmhToms($weather,"wind_run");kmhToms($weather,"wind_speed_avg");kmhTokmh($weather,"wind_speed_avg15");kmhTokmh($weather,"wind_speed_avg30");kmhTokmh($weather,"wind_speed_avgday");kmhTokmh($weather,"winddmax");kmhTokmh($weather,"windamax");kmhTokmh($weather,"windydmax");kmhTokmh($weather,"windmmax");kmhTokmh($weather,"windymax");kmhToms($weather,"windrun34");kmhTokmh($weather,"wind_gust_60min");$weather["wind_units"]=$windunit;}
 
