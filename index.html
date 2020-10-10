@@ -1,20 +1,40 @@
-<form id="fs-frm" name="department-contact-form" accept-charset="utf-8" action="https://formspree.io/steepleian@gmail.com" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-    <label for="department">Department</label>
-    <select name="department" id="department" required="">
-      <option value="Select" selected="" disabled="">Select</option>
-      <option value="Front Desk">Front Desk</option>
-      <option value="Customer Care">Customer Care</option>
-      <option value="Shipping Receiving">Shipping / Receiving</option>
-      <option value="Billing Accounting">Billing / Accounting</option>
-    </select>
-    <label for="message">Message</label>
-    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Department Contact Form Submission">
-  </fieldset>
-  <input type="submit" value="Send Message">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+form * {
+  display: block;
+  margin: 10px;
+}
+</style>
+<script language="Javascript" >
+function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}
+</script>
+</head>
+<body>
+
+<form onsubmit="download(this['name'].value, this['text'].value)">
+  <input type="text" name="name" value="/home/steepleian/weewx-Weather34/test.txt">
+  <textarea rows=3 cols=50 name="text">Please type in this box. When you 
+
+click the Download button, the contents of this box will be downloaded to 
+
+your machine at the location you specify. Pretty nifty. </textarea>
+  <input type="submit" value="Download">
 </form>
+</body>
+</html>
+
