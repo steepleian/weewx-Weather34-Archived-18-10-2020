@@ -405,11 +405,11 @@
         
         
         // Convert the text to BLOB.
-        const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'services.txt';	   // The file to save the data.
+        const textToBLOB1 = new Blob([data1], { type: 'text/plain' });
+        const sFileName1 = 'services.txt';	   // The file to save the data.
 
         let newLink = document.createElement("a");
-        newLink.download = sFileName;
+        newLink.download = sFileName1;
 
         if (window.webkitURL != null) {
             newLink.href = window.webkitURL.createObjectURL(textToBLOB);
@@ -733,11 +733,11 @@
         
         
         // Convert the text to BLOB.
-        const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'settings1.php';	   // The file to save the data.
+        const textToBLOB2 = new Blob([data2], { type: 'text/plain' });
+        const sFileName2 = 'settings1.php';	   // The file to save the data.
 
         let newLink = document.createElement("a");
-        newLink.download = sFileName;
+        newLink.download = sFileName2;
 
         if (window.webkitURL != null) {
             newLink.href = window.webkitURL.createObjectURL(textToBLOB);
