@@ -412,10 +412,10 @@
         newLink.download = sFileName1;
 
         if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB1);
         }
         else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.href = window.URL.createObjectURL(textToBLOB1);
             newLink.style.display = "none";
             document.body.appendChild(newLink);
         }
@@ -740,10 +740,10 @@
         newLink.download = sFileName2;
 
         if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB2);
         }
         else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.href = window.URL.createObjectURL(textToBLOB2);
             newLink.style.display = "none";
             document.body.appendChild(newLink);
         }
