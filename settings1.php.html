@@ -318,9 +318,12 @@
         // This variable stores all the data.
         let data = 
             '\r <?php' + ' \r\n ' +
-            
+            '$weatherflowID =' +"'"  +weatherflowID.value +"';" + ' \r\n ' +
+            '$weatherflowoption =' +"'"  +weatherflowoption.value +"';" + ' \r\n ' +                                        
+            '$weatherflowlightning =' +"'"  +weatherflowlightning.value +"';" + ' \r\n ' +                                        
+            '$weatherflowmapzoom =' +"'"  +weatherflowmapzoom.value +"';" + ' \r\n ' +                                        
             '"' + 'lat'+'"' + ':' +"'" + lat.value +"',"+ ' \r\n ' +
-            '$weatherflowID=' +"'"  +lon.value +"';" + ' \r\n ' + 
+             
             '"' + 'lang'+'"' + ':' +"'"  + lang.value +"'," + ' \r\n ' +  
             '"' + 'continent'+'"' + ':' +"'"  + continent.value +"'," + ' \r\n ' +
             '"' + 'aq_apikey'+'"' + ':' +"'"  + aq_apikey.value +"'," + ' \r\n ' +
